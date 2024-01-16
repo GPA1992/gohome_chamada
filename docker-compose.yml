@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  node:
+    build: .
+    container_name: api
+    user: node
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    environment:
+      DB_USER: SA
+      DB_PASSWORD: gh@21#45LMN
+      DB_NAME: GoHome
+      DB_HOST: 172.18.0.2
+      JWT_SECRET: secretJWT
+      API_HOST: 'node'
+      API_PORT: 3000
+      DB_PORT: 1433
